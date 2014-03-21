@@ -1,6 +1,7 @@
 global class sampleWSDL{
-
+	
     webservice static string makeserviceCall( ) {
+    system.debug('test');
      HttpRequest req = new HttpRequest(); 
    
     //Set HTTPRequest Method
@@ -16,7 +17,7 @@ global class sampleWSDL{
      String body = 'test';
     //Set the HTTPRequest body  
     req.setBody(body);  
-
+ system.debug('test 2');
     Http http = new Http();
     
      try {
