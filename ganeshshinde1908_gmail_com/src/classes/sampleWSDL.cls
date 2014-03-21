@@ -19,7 +19,7 @@ global class sampleWSDL{
     req.setBody(body);  
  system.debug('test 2');
     Http http = new Http();
-    
+     system.debug('test 22222222');
      try {
       
           //Execute web service call here       
