@@ -20,6 +20,7 @@ global class sampleWSDL{
  system.debug('test 2');
     Http http = new Http();
      system.debug('test 22222222');
+     system.debug('test 3333333');
      try {
       
           //Execute web service call here       
