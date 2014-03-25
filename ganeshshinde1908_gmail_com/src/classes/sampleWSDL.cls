@@ -17,7 +17,7 @@ global class sampleWSDL{
      String body = 'test';
     //Set the HTTPRequest body  
     req.setBody(body);  
- system.debug('test 2');
+ 	system.debug('test 2');
     Http http = new Http();
      system.debug('test 22222222');
      system.debug('test 3333333');
