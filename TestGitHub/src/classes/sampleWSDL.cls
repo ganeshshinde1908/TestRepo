@@ -1,5 +1,10 @@
 global class sampleWSDL{
 	
+	public sampleWSDL(){
+		system.debug('Test..');
+	}
+
+	
     webservice static string makeserviceCall( ) {
     system.debug('test');
      HttpRequest req = new HttpRequest(); 
