@@ -1,0 +1,79 @@
+<apex:page controller="GeneralinquiryController" sidebar="false">
+	<head>
+
+		<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />		
+		
+	<style>
+		.formStyle{
+			background-color: rgb(7, 228, 184);
+			font-size: 20px;
+			margin-left: 17px;
+			width: 25%;
+		}
+	</style>		
+	</head>
+    <body class="bodyClass">
+	  <apex:form id="loginForm" forceSSL="true">
+	  <table class = "formStyle">
+	  	<tr>
+		  	<td>
+				<p style="color: red ; text-align: center;">General Inquiry Form</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			    <apex:outputPanel layout="block">
+			      <apex:pageMessages id="error"/>
+			      <apex:panelGrid columns="2" style="margin-top:1em;">
+			      
+			        <apex:outputLabel value="First Name " for="fName"/>
+			        <apex:inputText id="fName" value="{!fName}"/>
+			        
+			        <apex:outputLabel value="Last Name " for="lName"/>
+			        <apex:inputText id="lName" value="{!lName}"/>	        
+			        
+			        <apex:outputLabel value="Email" for="email"/>
+			        <apex:inputText id="email" value="{!Email}"/>
+			        
+			        <apex:outputLabel value="Phone " for="Phone"/>
+			        <apex:inputText id="Phone" value="{!Phone}"/>
+		
+		 			<apex:outputLabel value="Description " for="newDesc"/>
+					<apex:inputTextarea id="newDesc" value="{!Description}"/>
+			      </apex:panelGrid> 
+			    </apex:outputPanel>
+			 </td>
+		 </tr>
+		 <tr>
+			 <td>
+			 	  <apex:commandButton onClick="checkDetails();" value="Submit Inquiry" id="submitButton"/>
+			 </td>
+		 </tr>
+	    </table>
+	  </apex:form>
+	  
+		<script>
+			$j = jQuery.noConflict();
+				$j(document).ready(function() { 
+			 	});
+			 	
+			function checkDetails(){
+				var email = $j("[id$='email']").val();
+				if(email.indexOf("@") != -1){
+					alert('email valid');
+				}else{
+					alert('email invalid');
+				}
+				
+			var phone = $j("[id$='Phone']").val();	
+			var filter = /^[0-9-+]+$/;
+			    if (filter.test(phone)) {
+			       alert('phone valid');
+			    }else {
+			       alert('phone invalid');
+			    }				
+			 
+			} 	
+		</script>	  
+    </body>	
+</apex:page>
